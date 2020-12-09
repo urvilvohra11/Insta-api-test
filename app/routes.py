@@ -5,7 +5,7 @@ import json
 import requests
 
 WEBHOOK_VERIFY_TOKEN = 'test_faq_token'
-PAGE_ACCESS_TOKEN = 'EAAeeVSYcYQYBAHng9dsVAiRdvy1kKttTvWFkcmoU2fwUr44vnJXVQJfXzuZCL8FAUM9IqZCqlZBgaWMbRw6JQ09xlF9s130Syzt1trfbZCC1jxbM4IHtPqxVXRg6DB11rsDheteFCtLuXHqJWTXqHkz4gMV7QZBRATgucFmF2ywZDZD'
+PAGE_ACCESS_TOKEN = 'EAAF4FdldOuQBANjWZBs1ZBXl0iDHQZAoOhPU5pZBQiJ3khl5fsYXjbMSa97V3xNcxY9YfWiBMbwDPJlpPtQ5ZBxFXAiOJV1f8VTKKp8rpnyuiX0FAecqFTcc0Gxr62Q6YJtsnUQx4E0HDfutIXXtXCdSUZBuKZATvz0belrOiG9LVrx1T8mfwvi'
 
 SEND_API_URL = 'https://graph.facebook.com/v5.0/me/messages?access_token=%s'\
   % PAGE_ACCESS_TOKEN
@@ -76,6 +76,8 @@ def webhook():
       return make_response('invalid params', 400)
   else: # POST
     body = json.loads(request.data)
-    send_message(body)
+    print("insta webhook")
+    print(body)
+    #send_message(body)
     return ("", 205)
 
